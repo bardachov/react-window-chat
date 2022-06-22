@@ -16,19 +16,21 @@ interface MessageProps {
 }
 
 export const Message: FC<MessageProps> = ({ index, style, message, setSize }) => {
-  const ref = useRef<HTMLParagraphElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
   
   useEffect(() => {
     if (ref.current) {
       const domRect = ref.current.getBoundingClientRect();
       // console.log(ref.current, ref.current.style.marginTop)
-      setSize(index, domRect.height+20);
+      setSize(index, domRect.height);
     }
     
   },[ref.current])
 
   return (
-    <p ref={ref} className={styles['chat-message']}>{message.content}</p>
+    <div ref={ref} className={styles['chat-message-wrapper']}>
+      <p className={styles['chat-message']}>{message.content}</p>
+    </div>
   )
 }
 
@@ -67,11 +69,11 @@ export const Chat: FC<{}> = () => {
 
   return(
     <>
-    <h1>asdsadsa</h1>
+    <h1>I am chat</h1>
     <div ref={ref} className={styles['chat-wrapper']}>
       <div className={styles['chat-content']} style={{
         height: height,
-        width: width/2
+        width: width
       }}>
         <List
           height={height}

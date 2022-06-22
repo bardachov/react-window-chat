@@ -7,17 +7,28 @@
 }
 
 .chat-wrapper {
-  background-color: azure;
+  // background-color: azure;
   height: 80vh;
   width: 100vw;
 }
 
 .chat-content {
-  background-color: aquamarine;
+  background-color: azure;
+}
+
+.chat-message-wrapper {
+  // border: 1px solid #9a2525
+  padding: 0;
 }
 
 .chat-message {
   padding: 15px; 
   margin: 10px;
-  border: 1px solid #9a2525
+  background-color: aquamarine;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+* {
+  box-sizing: border-box;
 }
